@@ -11,20 +11,52 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
-        private WebView webView;
-        private ListView listView;
-        private ADP_Radio adp_radio;
+    private AdView adView;
+    private InterstitialAd interstitialAd;
 
-        List<Radio> radios = new ArrayList<>();
+    private WebView webView;
+    private ListView listView;
+    private ADP_Radio adp_radio;
+
+    List<Radio> radios = new ArrayList<>();
+
+    private static final String idanuncio = "ca-app-pub-3940256099942544/1033173712";
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //anuncio1
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+
+        adView = findViewById(R.id.ad_view);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        adView.loadAd(adRequest);
+
+        //anuncio tela cheia
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId(idanuncio);
+        //fim anuncio tela cheia
+        //fim anuncio
 
         listView = findViewById(R.id.list);
         listView.setOnItemClickListener(this);
@@ -86,17 +118,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        //String imagem = "<img src=\"/https://tudoradio.com//img/imagecache/90x90_ivai.jpg\" alt=\"Ivaí FM\" title=\"Ivaí FM\" align=\"left\" style=\"border:none\">";
-        /*String caminho = "<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
-                "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
-                "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                "Seu navegador não suporta o elemento audio\n" +
-                "</audio>";
-*/
         String caminho = radio.getEndereco();
         webView.loadData(caminho,"text/html",null);
+        if(count == 5) {
+            showInterstitial();
+        }else{
+            count++;
+        }
 
+    }
+
+    private void showInterstitial() {
+        // Show the ad if it's ready. Otherwise toast and restart the game.
+        if (!interstitialAd.isLoading() && !interstitialAd.isLoaded()) {
+            AdRequest adRequest = new AdRequest.Builder()
+                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                    .build();
+
+            //AdRequest adRequest = new AdRequest.Builder().build();
+            interstitialAd.loadAd(adRequest);
+        }
+        if (interstitialAd != null && interstitialAd.isLoaded()) {
+            interstitialAd.show();
+            count = 0;
+        }
     }
 }

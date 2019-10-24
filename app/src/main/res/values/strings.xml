@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Radios Noroeste Parana</string>
+    <string name="app_name">Rádios Noroeste Paraná</string>
+    <string name="banner1">ca-app-pub-3925364440483118/1997502400</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>
