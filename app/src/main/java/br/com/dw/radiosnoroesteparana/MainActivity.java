@@ -102,8 +102,56 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
 
+            Radio radio3 = new Radio();
+            radio3.setId(3);
+            radio3.setNome("Ivaí FM - 101.5");
+            radio3.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+
+            Radio radio4 = new Radio();
+            radio4.setId(4);
+            radio4.setNome("Ivaí FM - 101.5");
+            radio4.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+
+            Radio radio5 = new Radio();
+            radio5.setId(5);
+            radio5.setNome("Ivaí FM - 101.5");
+            radio5.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+
+            Radio radio6 = new Radio();
+            radio6.setId(6);
+            radio6.setNome("Ivaí FM - 101.5");
+            radio6.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+
             radios.add(radio);
             radios.add(radio2);
+            radios.add(radio3);
+            radios.add(radio4);
+            radios.add(radio5);
+            radios.add(radio6);
 
             adp_radio = new ADP_Radio(this,radios);
             listView.setAdapter(adp_radio);
