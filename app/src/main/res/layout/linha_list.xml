@@ -7,7 +7,7 @@
     android:orientation="horizontal"
     android:descendantFocusability="blocksDescendants">
 
-    <WebView
+    <ImageView
         android:layout_margin="5dp"
         android:id="@+id/imagem"
         android:layout_width="60dp"

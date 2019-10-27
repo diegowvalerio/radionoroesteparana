@@ -2,12 +2,16 @@ package br.com.dw.radiosnoroesteparana;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,10 +22,16 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+    private Handler handler = new Handler();
     private AdView adView;
     private InterstitialAd interstitialAd;
 
@@ -80,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void preenchelista() {
         if (radios.isEmpty()){
 
-            Radio radio = new Radio();
+            final Radio radio = new Radio();
             radio.setId(1);
             radio.setNome("Cidade FM - 93.1");
             radio.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
@@ -90,9 +100,52 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     "<source src=\"http://radio.maxicast.com.br:8179/;\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
+            radio.setCidadeuf("Loanda - PR");
 
-            Radio radio2 = new Radio();
-            radio2.setId(1);
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("http://www.cidadefmloanda.com.br/logo2017.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+
+            final Radio radio3 = new Radio();
+            radio3.setId(3);
+            radio3.setNome("Guadalupe FM - 102.1");
+            radio3.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8359/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8359/;\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8359/;.m3u\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8359/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio3.setCidadeuf("Loanda - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://tudoradio.com/img/imagecache/90x90_radio_guadalupefm1021.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio3.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+
+            final Radio radio2 = new Radio();
+            radio2.setId(2);
             radio2.setNome("Ivaí FM - 101.5");
             radio2.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
                     "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
@@ -101,57 +154,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
+            radio2.setCidadeuf("Santa Isabel do Ivaí - PR");
 
-            Radio radio3 = new Radio();
-            radio3.setId(3);
-            radio3.setNome("Ivaí FM - 101.5");
-            radio3.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "Seu navegador não suporta o elemento audio\n" +
-                    "</audio>");
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
 
-            Radio radio4 = new Radio();
-            radio4.setId(4);
-            radio4.setNome("Ivaí FM - 101.5");
-            radio4.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "Seu navegador não suporta o elemento audio\n" +
-                    "</audio>");
-
-            Radio radio5 = new Radio();
-            radio5.setId(5);
-            radio5.setNome("Ivaí FM - 101.5");
-            radio5.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "Seu navegador não suporta o elemento audio\n" +
-                    "</audio>");
-
-            Radio radio6 = new Radio();
-            radio6.setId(6);
-            radio6.setNome("Ivaí FM - 101.5");
-            radio6.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
-                    "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
-                    "Seu navegador não suporta o elemento audio\n" +
-                    "</audio>");
+                    try {
+                        URL url = new URL("https://3.bp.blogspot.com/-bUS8FlJ38wg/VYGhB3utPFI/AAAAAAAAcOk/fxTND8meRCs/s1600/RADIO_IVAI_FM_SANTA_ISABEL_DO_IVAI_PR.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio2.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
 
             radios.add(radio);
             radios.add(radio2);
             radios.add(radio3);
-            radios.add(radio4);
-            radios.add(radio5);
-            radios.add(radio6);
 
             adp_radio = new ADP_Radio(this,radios);
             listView.setAdapter(adp_radio);
