@@ -171,9 +171,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
             }.start();
 
+            final Radio radio4 = new Radio();
+            radio4.setId(4);
+            radio4.setNome("Castelo FM - 104.9");
+            radio4.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"https://server3.webradios.com.br:19352/9352\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio4.setCidadeuf("Santa Cruz de Monte Castelo - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio11371_1439401388.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio4.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+
             radios.add(radio);
-            radios.add(radio2);
             radios.add(radio3);
+            radios.add(radio2);
+            radios.add(radio4);
 
             adp_radio = new ADP_Radio(this,radios);
             listView.setAdapter(adp_radio);
