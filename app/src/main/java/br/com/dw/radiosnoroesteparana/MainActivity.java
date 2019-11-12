@@ -195,10 +195,307 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
             }.start();
 
+            //
+            final Radio radio5 = new Radio();
+            radio5.setId(5);
+            radio5.setNome("Rádio Pontal FM - 101.1");
+            radio5.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://216.245.194.246:8322/live\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio5.setCidadeuf("Nova Londrina - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio27202_1539172397.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio5.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio6 = new Radio();
+            radio6.setId(6);
+            radio6.setNome("Rádio Gospel Baluarte");
+            radio6.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"https://servidor40-2.brlogic.com:8188/live\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio6.setCidadeuf("Nova Londrina - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/md/radio111996_1561122688.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio6.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio7 = new Radio();
+            radio7.setId(7);
+            radio7.setNome("Rádio Caiuá FM - 103.5");
+            radio7.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"https://player.livemus.com.br/ssl.php?p=27638&s=live8\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio7.setCidadeuf("Paranavaí - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://tudoradio.com/img/imagecache/90x90_5c4b5c0f3bff3.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio7.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio8 = new Radio();
+            radio8.setId(8);
+            radio8.setNome("Rádio Cultura FM - 93.7");
+            radio8.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8563/;stream.mp3\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio8.setCidadeuf("Paranavaí - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio12456_1514048422.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio8.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio9 = new Radio();
+            radio9.setId(9);
+            radio9.setNome("Rádio Mais Hits FM - 100.7");
+            radio9.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://cast62.sitehosting.com.br:8171/live\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio9.setCidadeuf("Paranavaí - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio19801_1532005950.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio9.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio10 = new Radio();
+            radio10.setId(10);
+            radio10.setNome("Rádio Nova FM - 87.9");
+            radio10.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://rvn01.estudioproarte.com.br:9998/stream\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio10.setCidadeuf("Paranavaí - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio55411_1521457629.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio10.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio11 = new Radio();
+            radio11.setId(11);
+            radio11.setNome("Rádio RDR FM - 101.9");
+            radio11.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://ice2.fabricahost.com.br:8028/live\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio11.setCidadeuf("Paranavaí - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio13188_1483962307.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio11.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio12 = new Radio();
+            radio12.setId(12);
+            radio12.setNome("Rádio Skala FM - 87.9");
+            radio12.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://node-04.zeno.fm/yzwyz20a8zquv?rj-ttl=5&rj-tok=AAABbl0xvYoAGAiZD2V50__0Jw\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio12.setCidadeuf("Paranavaí - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio17293_1504957443.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio12.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio13 = new Radio();
+            radio13.setId(13);
+            radio13.setNome("Rádio Arena Sertaneja");
+            radio13.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://radiocentova.conectastm.com:8357//;stream.mp3\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio13.setCidadeuf("Paranavaí - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio37605_1466706057.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio13.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio14 = new Radio();
+            radio14.setId(14);
+            radio14.setNome("Rádio Baú do TS");
+            radio14.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://server01.ouvir.radio.br:8050/stream\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio14.setCidadeuf("Paranavaí - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio38654_1474036985.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio14.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio15 = new Radio();
+            radio15.setId(15);
+            radio15.setNome("Rádio Estação Saudade");
+            radio15.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+                    "<source src=\"http://radiocentova.conectastm.com:8137/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio15.setCidadeuf("Paranavaí - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://img.radios.com.br/radio/lg/radio73737_1557420302.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio15.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
             radios.add(radio);
             radios.add(radio3);
             radios.add(radio2);
             radios.add(radio4);
+            radios.add(radio5);
+            radios.add(radio6);
+            radios.add(radio7);
+            radios.add(radio8);
+            radios.add(radio9);
+            radios.add(radio10);
+            radios.add(radio11);
+            radios.add(radio12);
+            radios.add(radio13);
+            radios.add(radio14);
+            radios.add(radio15);
 
             adp_radio = new ADP_Radio(this,radios);
             listView.setAdapter(adp_radio);
