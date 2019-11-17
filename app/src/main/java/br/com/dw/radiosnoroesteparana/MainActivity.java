@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     List<Radio> radios = new ArrayList<>();
 
-    private static final String idanuncio = "ca-app-pub-3940256099942544/1033173712";
+    //Intersticial-1
+    private static final String idanuncio = "ca-app-pub-3925364440483118/6149673869" ;//"ca-app-pub-3940256099942544/1033173712";
     int count = 0;
 
     @Override
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio = new Radio();
             radio.setId(1);
             radio.setNome("Cidade FM - 93.1");
-            radio.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 100%; height: 37px; background: #349E90\">\n" +
                     "<source src=\"http://radio.maxicast.com.br:8179/;\">\n" +
                     "<source src=\"http://radio.maxicast.com.br:8179/;\">\n" +
                     "<source src=\"http://radio.maxicast.com.br:8179/;.m3u\">\n" +
@@ -523,11 +524,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void showInterstitial() {
         // Show the ad if it's ready. Otherwise toast and restart the game.
         if (!interstitialAd.isLoading() && !interstitialAd.isLoaded()) {
-            AdRequest adRequest = new AdRequest.Builder()
+            /*AdRequest adRequest = new AdRequest.Builder()
                     .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                    .build();
+                    .build();*/
 
-            //AdRequest adRequest = new AdRequest.Builder().build();
+            AdRequest adRequest = new AdRequest.Builder().build();
             interstitialAd.loadAd(adRequest);
         }
         if (interstitialAd != null && interstitialAd.isLoaded()) {

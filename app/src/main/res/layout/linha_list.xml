@@ -2,21 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ly1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:background="#349E90"
     android:descendantFocusability="blocksDescendants"
-    android:background="?android:attr/activatedBackgroundIndicator">
+    android:orientation="horizontal">
 
     <ImageView
-        android:layout_margin="5dp"
         android:id="@+id/imagem"
         android:layout_width="60dp"
-        android:layout_height="60dp" />
+        android:layout_height="60dp"
+        android:layout_margin="5dp" />
 
     <LinearLayout
+        android:id="@+id/ly2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#9CCAC2"
         android:orientation="vertical">
 
         <TextView
@@ -25,14 +28,16 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:layout_marginLeft="0dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#BF0A0A0A" />
 
         <TextView
             android:id="@+id/cidade"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:layout_margin="5dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#680F0F0F" />
     </LinearLayout>
 
 </LinearLayout>
