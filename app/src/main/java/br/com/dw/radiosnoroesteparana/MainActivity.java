@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
 
         adView = findViewById(R.id.ad_view);
-
+        //adView.setAdSize(AdSize.SMART_BANNER);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
@@ -94,7 +95,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio = new Radio();
             radio.setId(1);
             radio.setNome("Cidade FM - 93.1");
-            radio.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 100%; height: 37px; background: #349E90\">\n" +
+            radio.setCidadeuf("Loanda - PR");
+
+            radio.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 100%; height: 37px\">\n" +
                     "<source src=\"http://radio.maxicast.com.br:8179/;\">\n" +
                     "<source src=\"http://radio.maxicast.com.br:8179/;\">\n" +
                     "<source src=\"http://radio.maxicast.com.br:8179/;.m3u\">\n" +
@@ -121,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio3 = new Radio();
             radio3.setId(3);
             radio3.setNome("Guadalupe FM - 102.1");
-            radio3.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio3.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://controleflash.omegasistemas.net:8359/;\">\n" +
                     "<source src=\"http://controleflash.omegasistemas.net:8359/;\">\n" +
                     "<source src=\"http://controleflash.omegasistemas.net:8359/;.m3u\">\n" +
@@ -148,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio2 = new Radio();
             radio2.setId(2);
             radio2.setNome("Ivaí FM - 101.5");
-            radio2.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio2.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
                     "<source src=\"http://controleflash.omegasistemas.net:8377/;\">\n" +
                     "<source src=\"http://controleflash.omegasistemas.net:8377/;.m3u\">\n" +
@@ -175,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio4 = new Radio();
             radio4.setId(4);
             radio4.setNome("Castelo FM - 104.9");
-            radio4.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio4.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"https://server3.webradios.com.br:19352/9352\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -200,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio5 = new Radio();
             radio5.setId(5);
             radio5.setNome("Rádio Pontal FM - 101.1");
-            radio5.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio5.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://216.245.194.246:8322/live\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -226,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio6 = new Radio();
             radio6.setId(6);
             radio6.setNome("Rádio Gospel Baluarte");
-            radio6.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio6.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"https://servidor40-2.brlogic.com:8188/live\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -252,7 +255,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio7 = new Radio();
             radio7.setId(7);
             radio7.setNome("Rádio Caiuá FM - 103.5");
-            radio7.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio7.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"https://player.livemus.com.br/ssl.php?p=27638&s=live8\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -278,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio8 = new Radio();
             radio8.setId(8);
             radio8.setNome("Rádio Cultura FM - 93.7");
-            radio8.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio8.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://controleflash.omegasistemas.net:8563/;stream.mp3\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -304,7 +307,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio9 = new Radio();
             radio9.setId(9);
             radio9.setNome("Rádio Mais Hits FM - 100.7");
-            radio9.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio9.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://cast62.sitehosting.com.br:8171/live\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -330,7 +333,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio10 = new Radio();
             radio10.setId(10);
             radio10.setNome("Rádio Nova FM - 87.9");
-            radio10.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio10.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://rvn01.estudioproarte.com.br:9998/stream\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -356,7 +359,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio11 = new Radio();
             radio11.setId(11);
             radio11.setNome("Rádio RDR FM - 101.9");
-            radio11.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio11.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://ice2.fabricahost.com.br:8028/live\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -382,7 +385,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio12 = new Radio();
             radio12.setId(12);
             radio12.setNome("Rádio Skala FM - 87.9");
-            radio12.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio12.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://node-04.zeno.fm/yzwyz20a8zquv?rj-ttl=5&rj-tok=AAABbl0xvYoAGAiZD2V50__0Jw\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -408,7 +411,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio13 = new Radio();
             radio13.setId(13);
             radio13.setNome("Rádio Arena Sertaneja");
-            radio13.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio13.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://radiocentova.conectastm.com:8357//;stream.mp3\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -434,7 +437,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio14 = new Radio();
             radio14.setId(14);
             radio14.setNome("Rádio Baú do TS");
-            radio14.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio14.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://server01.ouvir.radio.br:8050/stream\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
@@ -460,7 +463,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final Radio radio15 = new Radio();
             radio15.setId(15);
             radio15.setNome("Rádio Estação Saudade");
-            radio15.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px; background: #f1f3f4\">\n" +
+            radio15.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
                     "<source src=\"http://radiocentova.conectastm.com:8137/;\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
