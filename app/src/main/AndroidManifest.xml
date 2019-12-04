@@ -3,6 +3,7 @@
     package="br.com.dw.radiosnoroesteparana">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
         android:allowBackup="true"

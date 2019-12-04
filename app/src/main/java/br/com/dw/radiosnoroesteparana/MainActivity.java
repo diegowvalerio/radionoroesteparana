@@ -1,9 +1,11 @@
 package br.com.dw.radiosnoroesteparana;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -798,6 +800,318 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }.start();
             //
 
+            //
+            final Radio radio28 = new Radio();
+            radio28.setId(28);
+            radio28.setNome("Rádio Ilha FM - 107.1");
+            radio28.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://c1.fabricahost.com.br:8003/live\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio28.setCidadeuf("Umuarama - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://socialradio.com.br/storage/9bKxkOCQcc7NM4WZ4tCp2rNN5HPkOHyju6UnSWEb.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio28.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio29 = new Radio();
+            radio29.setId(29);
+            radio29.setNome("Rádio Inconfidência AM - 840");
+            radio29.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://caikron.com.br:1935/rcr_inconfidencia/inconfidencia.stream/playlist.m3u8\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio29.setCidadeuf("Umuarama - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("http://www.radioinconfidenciaam.com.br/userfiles/empresas/eb76deef4e2ad3d859ceb13bd5b55fdb.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio29.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio30 = new Radio();
+            radio30.setId(30);
+            radio30.setNome("Rádio Ilustrada FM - 102.3");
+            radio30.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://controleflash.omegasistemas.net:8656/;stream.mp3\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio30.setCidadeuf("Umuarama - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://tudoradio.com/img/imagecache/90x90_radio_ilustradafm1023.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio30.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio31 = new Radio();
+            radio31.setId(31);
+            radio31.setNome("Rádio Bianca FM - 94.5");
+            radio31.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://65.182.104.113:10110/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio31.setCidadeuf("Umuarama - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://tudoradio.com/img/imagecache/90x90_5b203e6cc7996.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio31.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio32 = new Radio();
+            radio32.setId(32);
+            radio32.setNome("Rádio Aline FM - 93.7");
+            radio32.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://65.182.104.113:10140/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio32.setCidadeuf("Umuarama - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://tudoradio.com/img/imagecache/90x90_5b96eba31c03e.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio32.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio33 = new Radio();
+            radio33.setId(33);
+            radio33.setNome("Rádio RUP FM - 107.7");
+            radio33.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"https://caikron.com.br:8082/unicesumar/rup/playlist.m3u8\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio33.setCidadeuf("Umuarama - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://static.wixstatic.com/media/0e6116_16d447967dc2435b9c5b7a741e455cda~mv2_d_2835_2835_s_4_2.png/v1/crop/x_0,y_107,w_2835,h_2621/fill/w_45,h_41,al_c,q_80,usm_0.66_1.00_0.01/LOGO%20RUP.webp");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio33.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio34 = new Radio();
+            radio34.setId(34);
+            radio34.setNome("Rádio Olga FM - 102.9");
+            radio34.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://143.208.11.104:8202/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio34.setCidadeuf("Cianorte - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://tudoradio.com/img/imagecache/90x90_radio_olgafm1029.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio34.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio35 = new Radio();
+            radio35.setId(35);
+            radio35.setNome("Rádio Cia FM - 95.9");
+            radio35.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://142.54.190.6:9906/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio35.setCidadeuf("Cianorte - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("https://tudoradio.com/img/imagecache/90x90_5c4f085f8a012.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio35.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio36 = new Radio();
+            radio36.setId(36);
+            radio36.setNome("Rádio Studio Nayty Web");
+            radio36.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://stm24.srvaudio.com.br:10074/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio36.setCidadeuf("Rondon - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("http://ps.srvsite.com/arquivos/5218/cabecalho-5218-20191022084809.jpg");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio36.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio37 = new Radio();
+            radio37.setId(37);
+            radio37.setNome("Rádio R");
+            radio37.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://173.236.30.162:8467/;\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio37.setCidadeuf("Rondon - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("http://www.radior.com.br/2017/wp-content/uploads/2018/01/herald_logo@2x.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio37.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio38 = new Radio();
+            radio38.setId(38);
+            radio38.setNome("Rádio Bota FM - 87.9");
+            radio38.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://server01.stmsg.com.br:7150/stream\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio38.setCidadeuf("São Tomé - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("http://www.radiobotafm.com.br/admin/assets/img/logo.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio38.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
+            //
+            final Radio radio39 = new Radio();
+            radio39.setId(39);
+            radio39.setNome("Rádio Tapejara FM - 101.5");
+            radio39.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
+                    "<source src=\"http://177.92.186.22:8000/stream.aac\">\n" +
+                    "Seu navegador não suporta o elemento audio\n" +
+                    "</audio>");
+            radio39.setCidadeuf("Tapejara - PR");
+
+            new Thread() {
+                public void run() {
+                    Bitmap img = null;
+
+                    try {
+                        URL url = new URL("http://www.radiotapejara.com.br/images/logo.png");
+                        HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                        InputStream input = conexao.getInputStream();
+                        img = BitmapFactory.decodeStream(input);
+                        radio39.setImagem(img);
+                    } catch (IOException e) {
+                    }
+                }
+            }.start();
+            //
+
             radios.add(radio);
             radios.add(radio3);
             radios.add(radio2);
@@ -825,19 +1139,36 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             radios.add(radio25);
             radios.add(radio26);
             radios.add(radio27);
+            radios.add(radio28);
+            radios.add(radio29);
+            radios.add(radio30);
+            radios.add(radio31);
+            radios.add(radio32);
+            radios.add(radio33);
+            radios.add(radio34);
+            radios.add(radio35);
+            radios.add(radio36);
+            radios.add(radio37);
+            radios.add(radio38);
+            radios.add(radio39);
 
             adp_radio = new ADP_Radio(this,radios);
             listView.setAdapter(adp_radio);
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Radio radio = (Radio) adapterView.getItemAtPosition(i);
         Toast.makeText(this, "Rádio: "+radio.getNome(), Toast.LENGTH_SHORT).show();
 
         WebSettings webSettings = webView.getSettings();
+
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setMediaPlaybackRequiresUserGesture(false);
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+
 
         String caminho = radio.getEndereco();
         webView.loadData(caminho,"text/html",null);
