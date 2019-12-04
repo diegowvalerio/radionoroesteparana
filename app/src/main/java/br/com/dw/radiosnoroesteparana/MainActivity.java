@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -106,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     "<source src=\"http://radio.maxicast.com.br:8179/;\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
+            //radio.setEndereco("http://radio.maxicast.com.br:8179/;.m3u");
             radio.setCidadeuf("Loanda - PR");
 
             new Thread() {
@@ -1168,10 +1171,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         webSettings.setJavaScriptEnabled(true);
         webSettings.setMediaPlaybackRequiresUserGesture(false);
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+        //webSettings.setUseWideViewPort(true);
+        //webSettings.setAllowContentAccess(true);
+        //webSettings.setEnableSmoothTransition(true);
+        //webSettings.setLoadsImagesAutomatically(true);
+        //webSettings.setLoadWithOverviewMode(true);
+        //webSettings.setSupportZoom(true);
+        //webSettings.setPluginState(WebSettings.PluginState.ON);
 
 
         String caminho = radio.getEndereco();
         webView.loadData(caminho,"text/html",null);
+        //webView.loadUrl(caminho);
         if(count == 5) {
             showInterstitial();
         }else{
