@@ -3,6 +3,7 @@ package br.com.dw.radiosnoroesteparana;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private static final String idanuncio = "ca-app-pub-3925364440483118/6149673869" ;//"ca-app-pub-3940256099942544/1033173712";
     int count = 0;
 
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,10 +104,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             radio.setCidadeuf("Loanda - PR");
 
             radio.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 100%; height: 37px\">\n" +
-                    "<source src=\"http://radio.maxicast.com.br:8179/;\">\n" +
-                    "<source src=\"http://radio.maxicast.com.br:8179/;\">\n" +
-                    "<source src=\"http://radio.maxicast.com.br:8179/;.m3u\">\n" +
-                    "<source src=\"http://radio.maxicast.com.br:8179/;\">\n" +
+                    "<source src=\"https://player.srvaudio.com.br/player-ssl/10484;\">\n" +
+                    "<source src=\"https://player.srvaudio.com.br/player-ssl/10484;\">\n" +
+                    "<source src=\"https://player.srvaudio.com.br/player-ssl/10484\">\n" +
+                    "<source src=\"https://player.srvaudio.com.br/player-ssl/10484;\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
             //radio.setEndereco("http://radio.maxicast.com.br:8179/;.m3u");
@@ -116,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     Bitmap img = null;
 
                     try {
-                        URL url = new URL("http://www.cidadefmloanda.com.br/logo2017.jpg");
+                        URL url = new URL("https://tudoradio.com/img/uploads/radios/5cd588d96e469.jpeg");
                         HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
                         InputStream input = conexao.getInputStream();
                         img = BitmapFactory.decodeStream(input);
@@ -261,7 +263,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             radio7.setId(7);
             radio7.setNome("Rádio Caiuá FM - 103.5");
             radio7.setEndereco("<audio controls=\"\" autoplay=\"\" loop=\"\" style=\"width: 99%; height: 37px\">\n" +
-                    "<source src=\"https://player.livemus.com.br/ssl.php?p=27638&s=live8\">\n" +
+                    "<source src=\"https://ssl.livemus.com.br:27166/stream\">\n" +
                     "Seu navegador não suporta o elemento audio\n" +
                     "</audio>");
             radio7.setCidadeuf("Paranavaí - PR");
@@ -1191,6 +1193,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    @SuppressLint("MissingPermission")
     private void showInterstitial() {
         // Show the ad if it's ready. Otherwise toast and restart the game.
         if (!interstitialAd.isLoading() && !interstitialAd.isLoaded()) {
