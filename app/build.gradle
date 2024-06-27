@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 34
     defaultConfig {
         applicationId "br.com.dw.radiosnoroesteparana"
-        minSdkVersion 14
-        targetSdkVersion 30
-        versionCode 4
+        minSdkVersion 20
+        targetSdkVersion 33
+        versionCode 8
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,7 +26,15 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    implementation 'com.google.android.gms:play-services-ads:18.2.0'
+    // https://mvnrepository.com/artifact/com.google.android.gms/play-services-ads
+    implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '20.0.0'
+
     implementation 'com.google.android.material:material:1.0.0'
 
+
+    implementation("androidx.fragment:fragment:1.1.0")
+
+
 }
+
+

@@ -1,5 +1,6 @@
 package br.com.dw.radiosnoroesteparana;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +9,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -20,13 +23,17 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,7 +46,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private Handler handler = new Handler();
     private AdView adView;
-    private InterstitialAd interstitialAd;
+    InterstitialAd interstitialAd;
 
     private WebView webView;
     private ListView listView;
@@ -50,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     //Intersticial-1
     private static final String idanuncio = "ca-app-pub-3925364440483118/6149673869" ;//"ca-app-pub-3940256099942544/1033173712";
     int count = 0;
+
+
 
     @SuppressLint("MissingPermission")
     @Override
@@ -66,13 +75,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adView = findViewById(R.id.ad_view);
         //adView.setAdSize(AdSize.SMART_BANNER);
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         adView.loadAd(adRequest);
 
         //anuncio tela cheia
-        interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId(idanuncio);
+        loadInterstitialAd();
         //fim anuncio tela cheia
         //fim anuncio
 
@@ -87,6 +94,54 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return false;
             }
         });
+    }
+
+    private void loadInterstitialAd(){
+
+        AdRequest adRequest2 = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this, getString(R.string.YourInterstitialAdID), adRequest2,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        interstitialAd = interstitialAd;
+
+
+                        interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
+                            @Override
+                            public void onAdDismissedFullScreenContent() {
+                                // Called when fullscreen content is dismissed.
+                                Log.d("TAG", "The ad was dismissed.");
+
+                                loadInterstitialAd();
+
+                            }
+
+                            @Override
+                            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                                // Called when fullscreen content failed to show.
+                                Log.d("TAG", "The ad failed to show.");
+                            }
+
+                            @Override
+                            public void onAdShowedFullScreenContent() {
+                                Log.d("TAG", "The ad was shown.");
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+
+                        interstitialAd = null;
+                    }
+                });
+
+
     }
 
     @Override
@@ -1195,18 +1250,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @SuppressLint("MissingPermission")
     private void showInterstitial() {
-        // Show the ad if it's ready. Otherwise toast and restart the game.
-        if (!interstitialAd.isLoading() && !interstitialAd.isLoaded()) {
-            /*AdRequest adRequest = new AdRequest.Builder()
-                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                    .build();*/
-
-            AdRequest adRequest = new AdRequest.Builder().build();
-            interstitialAd.loadAd(adRequest);
-        }
-        if (interstitialAd != null && interstitialAd.isLoaded()) {
-            interstitialAd.show();
+        if (interstitialAd != null) {
+            interstitialAd.show(MainActivity.this);
             count = 0;
         }
+        // Show the ad if it's ready. Otherwise toast and restart the game.
+
     }
 }
